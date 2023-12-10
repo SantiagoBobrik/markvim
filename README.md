@@ -2,7 +2,7 @@
 
 Markvim is a minimalist Markdown editor with integrated Vim functionality.
 
-![image](https://github.com/SantiagoBobrik/markvim/assets/43079605/ea95c3d6-b6a6-40ce-9db3-34b36d5710cb)
+![image](https://github.com/SantiagoBobrik/markvim/assets/43079605/50245069-4868-4687-9f48-4ddde8d51cf9)
 
 
 ## Getting Started
