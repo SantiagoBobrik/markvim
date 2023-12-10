@@ -9,8 +9,21 @@ import { getSearchParams, SearchParams } from "./searchParams";
  */
 export const getLocalState = () => {
     const urlParams = getSearchParams();
-    const markdownStorage = localStorage.getItem("markdown");
     const markdownParam = urlParams[SearchParams.MARKDOWN];
-    const value = markdownParam ? decode(markdownParam) : markdownStorage || "";
-    return value;
+
+
+    if (markdownParam) {
+        const userAccepted = window.confirm(`
+        Do you want to restore the previous state?  
+        This will replace the current content.
+        `);
+        
+        if (userAccepted) {
+            localStorage.setItem("markdown", decode(markdownParam));
+        }
+        
+        window.history.pushState({}, "", window.location.pathname);
+    }
+
+    return  localStorage.getItem("markdown") || "";
 }
