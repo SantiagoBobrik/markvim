@@ -19,7 +19,11 @@ export const DowloadFile = () => {
     link.click();
   };
   return (
-    <button className="dropdown__content__option" onClick={handleOnSave}>
+    <button
+      className="dropdown__content__option"
+      onClick={handleOnSave}
+      aria-label="Download file"
+    >
       <SaveSVG />
       <span>Download file</span>
     </button>

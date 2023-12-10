@@ -15,7 +15,11 @@ export const ResetEditor = () => {
     }
   };
   return (
-    <button className="dropdown__content__option" onClick={handleOnClick}>
+    <button
+      className="dropdown__content__option"
+      onClick={handleOnClick}
+      aria-label="Reset editor"
+    >
       <ResetEditorSVG />
       <span>Reset editor</span>
     </button>

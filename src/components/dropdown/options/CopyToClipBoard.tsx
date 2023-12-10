@@ -21,7 +21,11 @@ export const CopyToClipBoard = () => {
     }
   };
   return (
-    <button className="dropdown__content__option" onClick={handleOnClick}>
+    <button
+      className="dropdown__content__option"
+      onClick={handleOnClick}
+      aria-label="Copy to clipboard"
+    >
       <SVG />
       <span>{label}</span>
     </button>

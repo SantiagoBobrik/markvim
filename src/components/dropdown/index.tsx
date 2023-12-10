@@ -33,7 +33,11 @@ export const DropDown = () => {
 
   return (
     <div className="dropdown" ref={dropdownRef}>
-      <button className="dropdown__button" onClick={handleClick}>
+      <button
+        className="dropdown__button"
+        onClick={handleClick}
+        aria-label="Dropdown Menu"
+      >
         <DotsSVG />
       </button>
       <div className={`dropdown__content ${active && className}`}>

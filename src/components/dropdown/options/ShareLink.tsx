@@ -18,7 +18,11 @@ export const ShareLink = () => {
   };
 
   return (
-    <button className="dropdown__content__option" onClick={handleOnClick}>
+    <button
+      className="dropdown__content__option"
+      onClick={handleOnClick}
+      aria-label="Copy share link "
+    >
       <ShareLinkSVG />
       <span>{label}</span>
     </button>
