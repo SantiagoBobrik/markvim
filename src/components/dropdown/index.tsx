@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import { DowloadFile } from "./options/DowloadFile";
 import { CopyToClipBoard } from "./options/CopyToClipBoard";
 import { ShareLink } from "./options/ShareLink";
+import { ResetEditor } from "./options/ResetEditor";
 
 export const DropDown = () => {
   const [active, setActive] = useState(false);
@@ -39,6 +40,7 @@ export const DropDown = () => {
         <DowloadFile />
         <CopyToClipBoard />
         <ShareLink />
+        <ResetEditor />
       </div>
     </div>
   );
