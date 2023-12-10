@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { ShareLinkSVG } from "../../../assets/ShareLink";
 import { useEditorContext } from "../../../hooks/useEditorContext";
-import { encode } from "js-base64";
 
 export const ShareLink = () => {
   const { markdown } = useEditorContext();
@@ -10,7 +9,7 @@ export const ShareLink = () => {
 
   const handleOnClick = () => {
     setCopied(true);
-    const encodeMarkdown = encode(markdown);
+    const encodeMarkdown = window.btoa(markdown);
     const url = `${window.location.origin}/?markdown=${encodeMarkdown}`;
     navigator.clipboard.writeText(url);
     setTimeout(() => {

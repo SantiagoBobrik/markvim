@@ -1,4 +1,3 @@
-import { decode } from "js-base64";
 import { getSearchParams, SearchParams } from "./searchParams";
 
 
@@ -19,7 +18,7 @@ export const getLocalState = () => {
         `);
         
         if (userAccepted) {
-            localStorage.setItem("markdown", decode(markdownParam));
+            localStorage.setItem("markdown", window.atob(markdownParam.replace(/\s/g, "+")));
         }
         
         window.history.pushState({}, "", window.location.pathname);
