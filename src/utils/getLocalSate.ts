@@ -18,7 +18,12 @@ export const getLocalState = () => {
         `);
         
         if (userAccepted) {
-            localStorage.setItem("markdown", window.atob(markdownParam.replace(/\s/g, "+")));
+            try{
+                const decodedMarkdown = window.atob(markdownParam.replace(/\s/g, "+"));
+                localStorage.setItem("markdown", decodedMarkdown);
+            }catch{
+                localStorage.setItem("markdown", "");
+            }
         }
         
         window.history.pushState({}, "", window.location.pathname);
