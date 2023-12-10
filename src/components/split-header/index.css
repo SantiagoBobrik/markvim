@@ -1,0 +1,9 @@
+.split-header {
+  /* border-top: 1px solid var(--table-border); */
+  border-bottom: 1px solid var(--table-border);
+  padding: 1rem;
+  padding-left: 0;
+  font-size: 0.8rem;
+  color: var(--text-color);
+  letter-spacing: 0.3em;
+}

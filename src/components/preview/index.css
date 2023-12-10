@@ -1,0 +1,6 @@
+.markdown {
+  padding: 0.5rem;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  overflow: hidden;
+}

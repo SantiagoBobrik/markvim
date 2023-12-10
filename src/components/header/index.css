@@ -1,0 +1,40 @@
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 2rem 0 2rem;
+  color: white;
+}
+
+.logo-container {
+  cursor: pointer;
+  user-select: none;
+}
+
+.logo-container span {
+  color: var(--text-color);
+  letter-spacing: 0.1rem;
+  font-size: 1.5em;
+}
+
+.logo-container span:nth-child(1) {
+  font-weight: bold;
+  color: var(--link-color);
+}
+
+.logo-container span:nth-child(3) {
+  color: #45a049;
+}
+
+.button-container {
+  margin-left: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .main-header {
+    flex-direction: column;
+  }
+}
