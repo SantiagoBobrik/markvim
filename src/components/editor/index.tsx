@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { markdown as markdownCodeMirror } from "@codemirror/lang-markdown";
 import { vim } from "@replit/codemirror-vim";
 import CodeMirror from "@uiw/react-codemirror";
@@ -11,17 +11,17 @@ import "./index.css";
 import { saveLocalState } from "../../utils/saveLocalState";
 
 const extensions = [vim({ status: true }), markdownCodeMirror()];
-export const Editor = () => {
-  const DEBOUNCE_TIME = 500;
-  const { setMarkdown, markdown } = useEditorContext();
+const DEBOUNCE_TIME = 500;
 
+export const Editor = () => {
+  const { setMarkdown, markdown } = useEditorContext();
   const [editorValue, setEditorValue] = useState(markdown);
 
-  const myTheme = createTheme(editorTheme);
+  const myTheme = useMemo(() => createTheme(editorTheme), []);
 
-  const onChange = (value: string) => {
-    setEditorValue(value);
-  };
+  useEffect(() => {
+    setEditorValue(markdown);
+  }, [markdown]);
 
   useEffect(() => {
     const id = setTimeout(() => {
@@ -39,7 +39,7 @@ export const Editor = () => {
         height="100vh"
         maxWidth="100%"
         extensions={extensions}
-        onChange={useCallback(onChange, [])}
+        onChange={setEditorValue}
         theme={myTheme}
         basicSetup={{
           lineNumbers: false,

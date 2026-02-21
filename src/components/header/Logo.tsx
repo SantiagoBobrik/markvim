@@ -1,14 +1,13 @@
-import { ArrowDownSVG } from "../../assets/ArrowDown";
+import { LogoIcon } from "../../assets/LogoIcon";
 
 export const Logo = () => {
   return (
-    <div className="logo-container" role="button">
-      <span role="img"># </span>
-      <span role="img">
-        M
-        <ArrowDownSVG />
+    <div className="logo-container" aria-label="Markvim">
+      <LogoIcon />
+      <span className="logo-text">
+        <span className="logo-mark">mark</span>
+        <span className="logo-vim">vim</span>
       </span>
-      <span role="img">Vim</span>
     </div>
   );
 };

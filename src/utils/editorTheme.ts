@@ -4,33 +4,33 @@ import type { CreateThemeOptions } from "@uiw/codemirror-themes";
 export const editorTheme: CreateThemeOptions = {
     theme: "light",
     settings: {
-      background: "#1e1e1e",
-      foreground: "#ddd",
-      caret: "#b2ccd6",
-      selection: "#2d2d2d",
-      selectionMatch: "#2d2d2d",
-      lineHighlight: "#282c34",
-      gutterBackground: "#1e1e1e",
-      gutterForeground: "#555",
+      background: "#121211",
+      foreground: "#d8d8c6",
+      caret: "#6aaa6a",
+      selection: "#0a0a09",
+      selectionMatch: "#0a0a09",
+      lineHighlight: "#0a0a09",
+      gutterBackground: "#121211",
+      gutterForeground: "#787c79",
     },
 
     styles: [
       {
         tag: t.heading,
-        color: "#b2ccd6",
+        color: "#6aaa6a",
       },
       {
         tag: t.link,
-        color: "#5d00ff",
+        color: "#4a7a4a",
       },
       {
         tag: t.monospace,
-        color: "#ff4500",
-        background: "#2d2d2d",
+        color: "#787c79",
+        background: "#0a0a09",
       },
       {
         tag: t.list,
-        color: "#ddd",
+        color: "#d8d8c6",
       },
     ],
   }

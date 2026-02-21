@@ -1,7 +1,7 @@
 import { DotsSVG } from "../../assets/Dots";
 import "./index.css";
-import { useState, useRef, useEffect } from "react";
-import { DowloadFile } from "./options/DowloadFile";
+import { useState, useRef, useEffect, useCallback } from "react";
+import { DownloadFile } from "./options/DownloadFile";
 import { CopyToClipBoard } from "./options/CopyToClipBoard";
 import { ShareLink } from "./options/ShareLink";
 import { ResetEditor } from "./options/ResetEditor";
@@ -9,11 +9,12 @@ import { ResetEditor } from "./options/ResetEditor";
 export const DropDown = () => {
   const [active, setActive] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
-  const className = active ? "dropdown__content--active" : "";
 
   const handleClick = () => {
     setActive(!active);
   };
+
+  const close = useCallback(() => setActive(false), []);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -21,27 +22,41 @@ export const DropDown = () => {
         dropdownRef.current &&
         !dropdownRef.current.contains(event.target as Node)
       ) {
-        setActive(false);
+        close();
+      }
+    };
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        close();
       }
     };
 
     document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("keydown", handleKeyDown);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleKeyDown);
     };
-  }, [dropdownRef]);
+  }, [close]);
 
   return (
     <div className="dropdown" ref={dropdownRef}>
       <button
         className="dropdown__button"
         onClick={handleClick}
-        aria-label="Dropdown Menu"
+        aria-label="Toggle options menu"
+        aria-expanded={active}
+        aria-controls="dropdown-menu"
       >
         <DotsSVG />
       </button>
-      <div className={`dropdown__content ${active && className}`}>
-        <DowloadFile />
+      <div
+        id="dropdown-menu"
+        role="menu"
+        className={`dropdown__content ${active ? "dropdown__content--active" : ""}`}
+      >
+        <DownloadFile />
         <CopyToClipBoard />
         <ShareLink />
         <ResetEditor />

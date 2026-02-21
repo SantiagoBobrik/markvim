@@ -16,6 +16,7 @@ export const ResetEditor = () => {
   };
   return (
     <button
+      role="menuitem"
       className="dropdown__content__option"
       onClick={handleOnClick}
       aria-label="Reset editor"

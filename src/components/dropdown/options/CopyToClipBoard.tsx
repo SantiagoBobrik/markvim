@@ -16,12 +16,13 @@ export const CopyToClipBoard = () => {
       setTimeout(() => {
         setCopied(false);
       }, 1000);
-    } catch (error) {
-      console.error(error);
+    } catch {
+      alert("Failed to copy to clipboard.");
     }
   };
   return (
     <button
+      role="menuitem"
       className="dropdown__content__option"
       onClick={handleOnClick}
       aria-label="Copy to clipboard"

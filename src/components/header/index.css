@@ -3,27 +3,32 @@
   justify-content: space-between;
   align-items: center;
   padding: 2rem 2rem 0 2rem;
-  color: white;
+  color: var(--text-color);
 }
 
 .logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
   cursor: pointer;
   user-select: none;
 }
 
-.logo-container span {
+.logo-text {
+  font-family: "Geist Pixel", "Geist", monospace;
+  font-size: 1.4em;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: lowercase;
+}
+
+.logo-mark {
   color: var(--text-color);
-  letter-spacing: 0.1rem;
-  font-size: 1.5em;
+  opacity: 0.6;
 }
 
-.logo-container span:nth-child(1) {
-  font-weight: bold;
+.logo-vim {
   color: var(--link-color);
-}
-
-.logo-container span:nth-child(3) {
-  color: #45a049;
 }
 
 .button-container {
