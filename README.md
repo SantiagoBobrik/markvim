@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/SantiagoBobrik/markvim/assets/43079605/99e97960-6ec0-46bd-a07e-1538f50a97e4" alt="Markvim screenshot" width="720" />
+<img width="1423" height="698" alt="image" src="https://github.com/user-attachments/assets/3bd07782-89de-4036-899e-31a0b3dcdd53" />
 </p>
 
 <h1 align="center">Markvim</h1>
@@ -27,11 +27,6 @@
 - **Download as `.md`** — export your document with one click
 - **Dark theme** — easy on the eyes, built for focus
 
-## Screenshots
-
-<p align="center">
-  <img src="https://github.com/SantiagoBobrik/markvim/assets/43079605/1e50050a-a468-484e-bcbb-7e03b2a98ef7" alt="Markvim editor view" width="720" />
-</p>
 
 ## Getting Started
 
