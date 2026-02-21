@@ -8,4 +8,4 @@ You can expect an initial response within 48 hours.
 
 ## Supported Versions
 
-Only the latest version deployed at [markvim.vercel.app](https://markvim.vercel.app) is actively maintained.
+Only the latest version deployed at [markvim.xyz](https://markvim.xyz) is actively maintained.

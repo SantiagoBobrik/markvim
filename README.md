@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <a href="https://markvim.vercel.app">Live Demo</a> &middot;
+  <a href="https://markvim.xyz">Live Demo</a> &middot;
   <a href="CONTRIBUTING.md">Contributing</a> &middot;
   <a href="LICENSE">License</a>
 </p>
